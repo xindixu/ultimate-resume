@@ -3,14 +3,16 @@ header:
   location: Austin, TX
   phone: (512)775-1736
   links:
-    - "[xindixu.space](http://xindixu.space)"
-    - "[github.com/xindixu](https://github.com/xindixu)"
+    - text: xindixu.space
+      link: http://xindixu.space
+    - text: github.com/xindixu
+      link: https://github.com/xindixu
 
 experience:
   - title: Software Engineer Intern
     company: Pingboard
     location: Austin, TX
-    date: June 2019 — Present
+    date: [2019-06-05]
     details:
       - Implement features, debug and refactor Pingboard Org Chart software built with React, JavaScript, Ruby on Rail, and PostgreSQL
       - Create a backend API with recursive SQL to fetch hiring roles in org chart with filtering functionality and implement Redux pattern to get data asynchronously
@@ -18,48 +20,54 @@ experience:
       - Research design to silently renew access token upon expiring by catching unauthorized errors and resend original requests with the original order using Promises and queues
       - Migrate legacy user profile page to React, design flexible components, and save network requests by condensing response data and caching sharable data to Redux, enabling rich user interactions
 
-  - title: Software Engineering Intern
+  - title: Front-End Engineer Co-Op
     company: Nokia
     location: Austin, TX
-    date: June—August 2014
+    date: [2018-09-01, 2019-05-10]
     details:
       - Added features in Nokia’s Demo System built with Django, including front-end redesign, dynamic listing demos from Postgres, and improved user experience to help salespeople better demonstrate Nokia Software to clients
       - Created customer feedback & rating system to collect user data for future improvements, including setting up model for database, view-controller logics, and inviting user interface
       - Redesigned Demo Center WordPress website based on interview feedback and design thinking methodology, resulted in 400% increase in visits per month
 
 education:
-  school: University of Texas at Austin
-  location: Austin, TX
-  graduationDate: May 2020
-  degree: B.S. in Advertising
-  minor: Computer Science, Business, History
+  - school: University of Texas at Austin
+    date: 2020-05-17
+    details: 
+      - "BS in Advertising (TexasMedia & Analytics): GPA 3.8/4.0"
+      - "Certificate in Computer Science (24 credits): GPA 4.0/4.0"
+      - Minor in Business & History
+      - College of Communication Dean’s Honor List (Summa Cum Laude)
+      - "Courses: Full stack web development, deep dive in JS, software engineering, discrete math, algorithm and complexity"
 
 projects:
-  - name: Easy ASCII Diagram 
-    date: July 2019 — August 2019
+  - title: Easy ASCII Diagram 
+    tech: [JS, React, Socket, Node.js]
+    date: [2019-07-01, 2019-08-01]
     details:
       - Create an online, real-time, cooperative ASCII diagram drawing tool that supports import/export from/to plain text, facilitating technical communication
       - Design and organize various components, optimize event flow to allow complicated drawing, editing, deleting actions
       - Construct real time collaboration with socket.io, enabling constant server-to-server and client-to-client connection
 
-  - name: Prep for Job
-    date: March 2019 — May 2019
+  - title: Prep for Job
+    tech: [JS, React, Socket, Node.js]
+    date: [2019-03-01, 2019-05-01]
     details:
       - Led team of 5 to create web app that helps users find their dream jobs, build related skills, and look up salary information
       - Set up API calls to connect to O*NET API and Bureau of Labor Statistics API for data on job descriptions, related skills and technologies, and salary data
       - Implemented search functionalities and pagination for job, salary, skill listings with parameters on routes
       - Used Jinja templates to dynamically render webpage with backend and API data
 
-  - name: Stay at Home
-    date: October 2018 — December 2018
+  - title: Stay at Home
+    tech: [JS, React, Socket, Node.js]
+    date: [2018-10-01, 2018-12-01]
     details:
       - Used MEAN stack to create cooking web app where users can find recipes based on ingredients on hand with video search and robot chat functionalities
       - Adopted JWT for user login/registration authentication and protected routes, set up MongoDB for user profile storage
       - Created services in Angular to process user input, connected with Spoonacular API to get recipe data with queries in Express.js to complete search process
 
-skill: 
-  - front-end dev: JavaScript ES6+, React, Redux, Vue.js, Angular, HTML5, CSS3, TypeScript, SCSS, Bootstrap, Google Material
-  - Back-end Dev: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
-  - UI/Web Design: InVision, Sketch, CMS(WordPress), Adobe Photoshop, Illustrator, Animate, Premiere, After Effects
-  - Marketing: Data analysis/visualization (Tableau), advertising strategy, SEO
-  - Languages: native speaker of Chinese, fluent in English, proficient in Japanese
+skills: 
+  front-end Dev: JavaScript ES6+, React, Redux, Vue.js, Angular, HTML5, CSS3, TypeScript, SCSS, Bootstrap, Google Material
+  Back-end Dev: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
+  UI/Web Design: InVision, Sketch, CMS(WordPress), Adobe Photoshop, Illustrator, Animate, Premiere, After Effects
+  Marketing: Data analysis/visualization (Tableau), advertising strategy, SEO
+  Languages: native speaker of Chinese, fluent in English, proficient in Japanese
