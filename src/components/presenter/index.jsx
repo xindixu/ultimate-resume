@@ -8,57 +8,65 @@ import Project from "../../containers/project";
 import Education from "../../containers/education";
 import Detail from "../detail";
 
-const Presenter = ({ resumeJSON }) => {
+const Presenter = ({ resumeJSON, validate }) => {
   const { header, experience, education, projects, skills } = resumeJSON;
   const { name, location, phone, links } = header;
 
   return (
     <LetterSize>
       <Wrapper>
-        <Left>
-          <Header>
-            <h1>{name}</h1>
-            <p>{location}</p>
-            <p>{phone}</p>
-            {links.map(({ link, text }, index) => (
-              <p key={index}>
-                <a href={link}>{text}</a>
-              </p>
-            ))}
-          </Header>
-          <section>
-            <h2>Education</h2>
-            {education.map(item => (
-              <Education key={randomId()} {...item} />
-            ))}
-          </section>
-          <section>
-            <h2>Skills</h2>
-            <Detail
-              details={Object.keys(skills).map(key => (
-                <>
-                  <span className="text--title_case m-r-base">{key}</span>
-                  {skills[key]}
-                </>
-              ))}
-            />
-          </section>
-        </Left>
-        <Right>
-          <section>
-            <h2>Experience</h2>
-            {experience.map(item => (
-              <Experience key={randomId()} {...item} />
-            ))}
-          </section>
+        {validate(resumeJSON) ? (
+          <>
+            <Left>
+              <Header>
+                <h1>{name}</h1>
+                <p>{location}</p>
+                <p>{phone}</p>
+                {links.map(({ link, text }, index) => (
+                  <p key={index}>
+                    <a href={link}>{text}</a>
+                  </p>
+                ))}
+              </Header>
+              <section>
+                <h2>Education</h2>
+                {education.map(item => (
+                  <Education key={randomId()} {...item} />
+                ))}
+              </section>
+              <section>
+                <h2>Skills</h2>
+                <Detail
+                  details={skills.map(({ category, details }) => (
+                    <>
+                      <span className="text--title_case m-r-base">
+                        {category}
+                      </span>
+                      {details}
+                    </>
+                  ))}
+                />
+              </section>
+            </Left>
+            <Right>
+              <section>
+                <h2>Experience</h2>
+                {experience.map(item => (
+                  <Experience key={randomId()} {...item} />
+                ))}
+              </section>
 
-          <section>
-            <h2>Projects</h2>
-            {projects.map(item => (
-              <Project key={randomId()} {...item} />
-            ))}
-          </section>
-        </Right>
+              <section>
+                <h2>Projects</h2>
+                {projects.map(item => (
+                  <Project key={randomId()} {...item} />
+                ))}
+              </section>
+            </Right>
+          </>
+        ) : (
+          <p>Oops, something is wrong with your input</p>
+        )}
       </Wrapper>
     </LetterSize>
   );

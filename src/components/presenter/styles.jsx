@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { styleSettings } from "../../lib/styleSettings";
 
-const { spacerBase, spacerMd } = styleSettings;
+const { spacerMd, pink } = styleSettings;
 
 export const Wrapper = styled.article`
   position: absolute;
@@ -15,7 +15,11 @@ export const Wrapper = styled.article`
 const Container = styled.div`
   padding: ${spacerMd};
 `;
-export const Left = styled(Container)``;
+
+export const Left = styled(Container)`
+  background: ${pink};
+`;
+
 export const Right = styled(Container)``;
 
 export const Header = styled.header``;

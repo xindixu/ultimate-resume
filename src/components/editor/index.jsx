@@ -18,5 +18,8 @@ const Editor = ({ resumeJSON, setResumeJSON }) => {
     </LetterSize>
   );
 };
-Editor.propTypes = {};
+Editor.propTypes = {
+  resumeJSON: PropTypes.object.isRequired,
+  setResumeJSON: PropTypes.func.isRequired
+};
 export default Editor;

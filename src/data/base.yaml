@@ -66,8 +66,11 @@ projects:
       - Created services in Angular to process user input, connected with Spoonacular API to get recipe data with queries in Express.js to complete search process
 
 skills: 
-  front-end Dev: JavaScript ES6+, React, Redux, Vue.js, Angular, HTML5, CSS3, TypeScript, SCSS, Bootstrap, Google Material
-  Back-end Dev: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
-  UI/Web Design: InVision, Sketch, CMS(WordPress), Adobe Photoshop, Illustrator, Animate, Premiere, After Effects
-  Marketing: Data analysis/visualization (Tableau), advertising strategy, SEO
-  Languages: native speaker of Chinese, fluent in English, proficient in Japanese
+  - category: Front-end Dev
+    details: JavaScript ES6+, React, Redux, Vue.js, Angular, HTML5, CSS3, TypeScript, SCSS, Bootstrap, Google Material
+  - category: Back-end Dev
+    details: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
+  - category: Back-end Dev
+    details: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
+  - category: Languages
+    details: native speaker of Chinese, fluent in English, proficient in Japanese
