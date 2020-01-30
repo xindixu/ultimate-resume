@@ -27,6 +27,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "ajv": "^6.11.0",
+    "fs": "^0.0.1-security",
     "js-yaml": "^3.13.1",
     "pdfmake": "^0.1.63",
     "prop-types": "^15.7.2",

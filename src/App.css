@@ -1,5 +1,6 @@
 .App {
   margin: 0;
+  
 }
 
 .text--subtle {
@@ -13,3 +14,22 @@
 .m-r-base {
   margin-right: 1rem;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  line-height: 1.5;
+  list-style: circle;
+}
+
+p,li,span{
+  font-size: 12px;
+}
+
+.flex{
+  display: flex;
+}
+
