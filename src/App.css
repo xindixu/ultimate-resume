@@ -29,13 +29,12 @@ p,li {
 }
 
 
-h3{
+h3 {
   font-size: 14px;
   margin-block-end: 12px;
   display: flex;
   justify-content: space-between;
 }
-
 
 .flex{
   display: flex;
