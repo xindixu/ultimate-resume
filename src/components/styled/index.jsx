@@ -10,7 +10,7 @@ export const LetterSize = styled.div`
   background: white;
   position: relative;
   width: 100%;
-  padding-top: ${letterSizeAspectRatio}%;
+  padding-top: ${letterSizeAspectRatio / 2}%;
   border: 1px solid black;
   margin: ${spacerBase};
 `;

@@ -57,20 +57,20 @@ projects:
       - Implemented search functionalities and pagination for job, salary, skill listings with parameters on routes
       - Used Jinja templates to dynamically render webpage with backend and API data
 
-  - title: Stay at Home
-    tech: [JS, React, Socket, Node.js]
-    date: [2018-10-01, 2018-12-01]
-    details:
-      - Used MEAN stack to create cooking web app where users can find recipes based on ingredients on hand with video search and robot chat functionalities
-      - Adopted JWT for user login/registration authentication and protected routes, set up MongoDB for user profile storage
-      - Created services in Angular to process user input, connected with Spoonacular API to get recipe data with queries in Express.js to complete search process
+  # - title: Stay at Home
+  #   tech: [JS, React, Socket, Node.js]
+  #   date: [2018-10-01, 2018-12-01]
+  #   details:
+  #     - Used MEAN stack to create cooking web app where users can find recipes based on ingredients on hand with video search and robot chat functionalities
+  #     - Adopted JWT for user login/registration authentication and protected routes, set up MongoDB for user profile storage
+  #     - Created services in Angular to process user input, connected with Spoonacular API to get recipe data with queries in Express.js to complete search process
 
 skills: 
   - category: Front-end Dev
     details: JavaScript ES6+, React, Redux, Vue.js, Angular, HTML5, CSS3, TypeScript, SCSS, Bootstrap, Google Material
   - category: Back-end Dev
     details: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
-  - category: Back-end Dev
-    details: Django, Flask, Node.js, Express.js, Ruby on Rails, PostgreSQL, Firebase, REST, GraphQL
+  - category: User Experience
+    details: Accessibility, Responsiveness, Compatibility
   - category: Languages
     details: native speaker of Chinese, fluent in English, proficient in Japanese

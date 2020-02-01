@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Title } from "./styles";
 import { formatDate } from "../../lib/util";
 import Detail from "../../components/detail";
 
-const Heading = ({ title, tech, location, date }) => (
-  <Title>
+const Heading = ({ title, tech, date }) => (
+  <h3>
     <span>
       {title} - <span className="text--subtle">{tech.join(", ")}</span>
     </span>
@@ -13,7 +12,7 @@ const Heading = ({ title, tech, location, date }) => (
     <span>
       {formatDate(date[0])} - {date[1] ? formatDate(date[1]) : "Present"}
     </span>
-  </Title>
+  </h3>
 );
 
 const Project = ({ title, tech, location, date, details }) => (

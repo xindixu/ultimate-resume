@@ -1,6 +1,5 @@
 .App {
   margin: 0;
-  
 }
 
 .text--subtle {
@@ -21,15 +20,29 @@ ul {
 }
 
 li {
-  line-height: 1.5;
+  line-height: 1.8;
   list-style: circle;
 }
 
-p,li,span{
+p,li {
   font-size: 12px;
 }
+
+
+h3{
+  font-size: 14px;
+  margin-block-end: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .flex{
   display: flex;
 }
+
+.bold {
+  font-weight: bold;
+}
+
 

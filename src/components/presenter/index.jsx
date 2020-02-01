@@ -6,7 +6,7 @@ import { randomId } from "../../lib/util";
 import Experience from "../../containers/experience";
 import Project from "../../containers/project";
 import Education from "../../containers/education";
-import Detail from "../detail";
+import Skills from "../../containers/skills";
 
 const Presenter = ({ resumeJSON, validate }) => {
   const { header, experience, education, projects, skills } = resumeJSON;
@@ -36,16 +36,7 @@ const Presenter = ({ resumeJSON, validate }) => {
               </section>
               <section>
                 <h2>Skills</h2>
-                <Detail
-                  details={skills.map(({ category, details }) => (
-                    <>
-                      <span className="text--title_case m-r-base">
-                        {category}
-                      </span>
-                      {details}
-                    </>
-                  ))}
-                />
+                <Skills skills={skills} />
               </section>
             </Left>
             <Right>
@@ -73,7 +64,8 @@ const Presenter = ({ resumeJSON, validate }) => {
 };
 
 Presenter.propTypes = {
-  resumeJSON: PropTypes.object.isRequired
+  resumeJSON: PropTypes.object.isRequired,
+  validate: PropTypes.func.isRequired
 };
 
 export default Presenter;

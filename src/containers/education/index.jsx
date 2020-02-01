@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Title } from "./styles";
+
 import { formatDate } from "../../lib/util";
 import Detail from "../../components/detail";
 
 const Heading = ({ school, date }) => (
-  <Title>
+  <h3>
     <span>{school}</span>
     <span />
     <span>{formatDate(date)}</span>
-  </Title>
+  </h3>
 );
 
 const Education = ({ school, date, details }) => (

@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Title } from "./styles";
 import { formatDate } from "../../lib/util";
 import Detail from "../../components/detail";
 
 const Heading = ({ title, company, location, date }) => (
-  <Title>
+  <h3>
     <span>
       {title} -{" "}
       <span className="text--subtle">
@@ -16,7 +15,7 @@ const Heading = ({ title, company, location, date }) => (
     <span>
       {formatDate(date[0])} - {date[1] ? formatDate(date[1]) : "Present"}
     </span>
-  </Title>
+  </h3>
 );
 
 const Experience = ({ title, company, location, date, details }) => (
