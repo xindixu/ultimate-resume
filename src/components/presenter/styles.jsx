@@ -3,7 +3,7 @@ import { styleSettings } from "../../lib/styleSettings";
 
 const { spacerMd, pink } = styleSettings;
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.main`
   position: absolute;
   top: 0;
   left: 0;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { styleSettings } from "../../lib/styleSettings";
 
-const { spacerBase, spacerMd } = styleSettings;
+const { spacerBase } = styleSettings;
 
 const letterSizeAspectRatio = 129.41;
 export const LetterSize = styled.div`

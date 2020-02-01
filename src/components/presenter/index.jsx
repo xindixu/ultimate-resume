@@ -7,6 +7,7 @@ import Experience from "../../containers/experience";
 import Project from "../../containers/project";
 import Education from "../../containers/education";
 import Skills from "../../containers/skills";
+import logo from "../../assets/logo.svg";
 
 const Presenter = ({ resumeJSON, validate }) => {
   const { header, experience, education, projects, skills } = resumeJSON;
@@ -19,6 +20,7 @@ const Presenter = ({ resumeJSON, validate }) => {
           <>
             <Left>
               <Header>
+                <img src={logo} alt="Logo" />
                 <h1>{name}</h1>
                 <p>{location}</p>
                 <p>{phone}</p>
