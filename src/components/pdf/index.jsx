@@ -19,7 +19,7 @@ const fonts = {
 };
 
 const padding = getIntInPx(spacerBase);
-console.log(logo);
+
 const headerPdf = ({ name, location, phone, links }) => [
   name === "Xindi Xu" ? { image: logo, width: 180 } : { text: name },
   { text: `${location} | ${phone}` },
