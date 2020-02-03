@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import logo from "../../assets/logo.svg";
+import logoPng from "../../assets/logo.png";
 
 const Header = ({ header }) => {
   const { name, location, phone, links } = header;
 
   return (
-    <header>
-      {name === "Xindi Xu" ? <img src={logo} alt={name} /> : <h1>{name}</h1>}
+    <header className="m-b-lg">
+      {name === "Xindi Xu" ? <img src={logoPng} alt={name} /> : <h1>{name}</h1>}
       <p>
         {location} | {phone}
       </p>

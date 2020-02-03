@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import pdfMake from "pdfmake";
 import font from "pdfmake/build/vfs_fonts";
-import { formatDate } from "../../lib/util";
+import { formatDate, getIntInPx } from "../../lib/util";
 import { styleSettings } from "../../lib/styleSettings";
+import logo from "../../assets/logo.png";
 
-const { pink } = styleSettings;
+const { pink, left, right, spacerBase } = styleSettings;
+
 const { vfs } = font.pdfMake;
 const fonts = {
   Cormorant: {
@@ -16,8 +18,10 @@ const fonts = {
   }
 };
 
+const padding = getIntInPx(spacerBase);
+
 const headerPdf = ({ name, location, phone, links }) => [
-  { text: name },
+  name === "Xindi Xu" ? { image: logo, width: 180 } : { text: name },
   { text: `${location} | ${phone}` },
   links.map(({ title, text, link }) => ({
     text: `${title}: ${text} \n`,
@@ -30,13 +34,14 @@ const educationPdf = ({ school, date, details }) => [
   {
     text: `${formatDate(date)}`
   },
-  { ul: details }
+  { ul: details, type: "circle" }
 ];
 const skillPdf = skill => {
-  const texts = skill.map(
-    ({ category, details }) => `${category}:  ${details}`
-  );
-  return { ul: texts };
+  const texts = skill.map(({ category, details }) => [
+    { text: category, bold: true },
+    { text: details }
+  ]);
+  return { ul: texts, type: "circle" };
 };
 
 const experiencePdf = ({ title, company, location, date, details }) => [
@@ -55,7 +60,7 @@ const experiencePdf = ({ title, company, location, date, details }) => [
       }
     ]
   },
-  { ul: details }
+  { ul: details, type: "circle" }
 ];
 
 const projectsPdf = ({ title, tech, date, details }) => [
@@ -74,12 +79,10 @@ const projectsPdf = ({ title, tech, date, details }) => [
       }
     ]
   },
-  { ul: details }
+  { ul: details, type: "circle" }
 ];
 
 const PDF = ({ resumeJSON }) => {
-  const [pdf, setPdf] = useState(null);
-
   const { header, experience, skills, projects, education } = resumeJSON;
 
   const createPdf = () => {
@@ -87,27 +90,25 @@ const PDF = ({ resumeJSON }) => {
       content: [
         {
           table: {
-            widths: ["30%", "70%"],
+            widths: [left, right],
             body: [
               [
                 {
-                  width: "30%",
                   stack: [
                     ...headerPdf(header),
-                    { text: "Education", style: "h2" },
+                    { text: "Education", style: "h2White" },
                     ...education.map(obj => educationPdf(obj)),
-                    { text: "Skills", style: "h2" },
+                    { text: "Skills", style: "h2White" },
                     skillPdf(skills)
                   ],
                   fillColor: pink,
                   style: "left"
                 },
                 {
-                  width: "70%",
                   stack: [
-                    { text: "Experience", style: "h2" },
+                    { text: "Experience", style: "h2Pink" },
                     ...experience.map(obj => experiencePdf(obj)),
-                    { text: "Projects", style: "h2" },
+                    { text: "Projects", style: "h2Pink" },
                     ...projects.map(obj => projectsPdf(obj))
                   ],
                   style: "right"
@@ -120,26 +121,38 @@ const PDF = ({ resumeJSON }) => {
       ],
       defaultStyle: {
         font: "Cormorant",
-        fontSize: 10,
-        lineHeight: 1.5
+        fontSize: 8,
+        lineHeight: 1.5,
+        alignment: "justify"
       },
       styles: {
-        h2: {
+        h2Pink: {
           bold: true,
-          fontSize: 16
+          fontSize: 14,
+          margin: [0, 12, 0, 0],
+          color: pink
+        },
+        h2White: {
+          bold: true,
+          fontSize: 14,
+          margin: [0, 10, 0, 0],
+          color: "white"
         },
         h3: {
           bold: true,
-          fontSize: 12
+          fontSize: 12,
+          // left, top, right, bottom
+          margin: [0, 4, 0, 0]
         },
         left: {
-          margin: [20, 20, 10, 20]
+          margin: [padding, padding, padding, padding]
         },
         right: {
-          margin: [10, 20, 20, 20]
+          margin: [padding, padding, padding, padding]
         }
       },
-      pageMargins: [0, 0, 0, 0]
+      pageMargins: [0, 0, 0, 0],
+      pageSize: "LETTER"
     };
 
     pdfMake.createPdf(docDefinition, null, fonts, vfs).download();

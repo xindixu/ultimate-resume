@@ -19,16 +19,18 @@ const Presenter = ({ resumeJSON, validate }) => {
           <>
             <Left>
               <Header header={header} />
-              <section>
-                <h2>Education</h2>
-                {education.map(item => (
-                  <Education key={randomId()} {...item} />
-                ))}
-              </section>
-              <section>
-                <h2>Skills</h2>
-                <Skills skills={skills} />
-              </section>
+              <div>
+                <section>
+                  <h2>Education</h2>
+                  {education.map(item => (
+                    <Education key={randomId()} {...item} />
+                  ))}
+                </section>
+                <section>
+                  <h2>Skills</h2>
+                  <Skills skills={skills} />
+                </section>
+              </div>
             </Left>
             <Right>
               <section>

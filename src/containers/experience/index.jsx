@@ -6,14 +6,14 @@ import Detail from "../../components/detail";
 const Heading = ({ title, company, location, date }) => (
   <h3>
     <span>
-      {title} -{" "}
+      {title} &#8208;{" "}
       <span className="text--subtle">
         {company} @ {location}
       </span>
     </span>
     <span />
     <span>
-      {formatDate(date[0])} - {date[1] ? formatDate(date[1]) : "Present"}
+      {formatDate(date[0])} &#8208; {date[1] ? formatDate(date[1]) : "Present"}
     </span>
   </h3>
 );

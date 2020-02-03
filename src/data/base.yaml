@@ -58,7 +58,7 @@ projects:
       - Construct real time collaboration with socket.io, enabling constant server-to-server and client-to-client connection
 
   - title: Prep for Job
-    tech: [JS, React, Socket, Node.js]
+    tech: [Flask, Python, PostgreSQL]
     date: [2019-03-01, 2019-05-01]
     details:
       - Led team of 5 to create web app that helps users find their dream jobs, build related skills, and look up salary information
@@ -67,7 +67,7 @@ projects:
       - Used Jinja templates to dynamically render webpage with backend and API data
 
   - title: Stay at Home
-    tech: [JS, React, Socket, Node.js]
+    tech: [TS, Angular, Express.js, MongoDB]
     date: [2018-10-01, 2018-12-01]
     details:
       - Used MEAN stack to create cooking web app where users can find recipes based on ingredients on hand with video search and robot chat functionalities

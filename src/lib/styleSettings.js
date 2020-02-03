@@ -3,13 +3,23 @@ const spacers = {
   spacerMd: "2rem"
 };
 
+const fontSize = {
+  fontSizeBase: "10px",
+  fontSizeMd: "12px",
+  fontSizeLg: "14px",
+  fontSizeXl: "20px"
+};
+
 const colors = {
   pink: "#E6BFC7"
 };
 
 export const styleSettings = {
   ...spacers,
-  ...colors
+  ...colors,
+  ...fontSize,
+  left: "35%",
+  right: "65%"
 };
 
 export const breakpoints = {

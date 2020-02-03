@@ -6,8 +6,8 @@ const Skills = ({ skills }) => (
   <Detail
     details={skills.map(({ category, details }) => (
       <>
-        <span className="text--title_case m-r-base bold">{category}</span>
-        {details}
+        <span className="text--title_case bold">{category}</span> <br />
+        <span>{details}</span>
       </>
     ))}
   />
