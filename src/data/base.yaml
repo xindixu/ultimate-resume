@@ -3,10 +3,18 @@ header:
   location: Austin, TX
   phone: (512)775-1736
   links:
-    - text: xindixu.space
+    - title: Email
+      text: xindixu@utexas.edu
+      link: mailto:xindixu@utexas.edu
+    - title: Personal Website
+      text: xindixu.space
       link: http://xindixu.space
-    - text: github.com/xindixu
+    - title: GitHub
+      text: github.com/xindixu
       link: https://github.com/xindixu
+    - title: LinkedIn
+      text: linkedin.com/in/xindi-xu
+      link: https://www.linkedin.com/in/xindi-xu/
 
 experience:
   - title: Software Engineer Intern

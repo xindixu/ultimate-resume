@@ -18,9 +18,14 @@ const Container = styled.div`
 
 export const Left = styled(Container)`
   background: ${pink};
+  h1,
   h2 {
     color: white;
   }
 `;
 
-export const Right = styled(Container)``;
+export const Right = styled(Container)`
+  h2 {
+    color: ${pink};
+  }
+`;

@@ -7,13 +7,13 @@ const Header = ({ header }) => {
 
   return (
     <header>
-      <img src={logo} alt={name} />
+      {name === "Xindi Xu" ? <img src={logo} alt={name} /> : <h1>{name}</h1>}
       <p>
         {location} | {phone}
       </p>
-      {links.map(({ link, text }, index) => (
+      {links.map(({ title, link, text }, index) => (
         <p key={index}>
-          <a href={link}>{text}</a>
+          {title}: <a href={link}>{text}</a>
         </p>
       ))}
     </header>
