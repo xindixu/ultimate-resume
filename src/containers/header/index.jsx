@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import logo from "../../assets/logo.svg";
 import logoPng from "../../assets/logo.png";
 
 const Header = ({ header }) => {

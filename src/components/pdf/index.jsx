@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import pdfMake from "pdfmake";
 import font from "pdfmake/build/vfs_fonts";
@@ -19,7 +19,7 @@ const fonts = {
 };
 
 const padding = getIntInPx(spacerBase);
-
+console.log(logo);
 const headerPdf = ({ name, location, phone, links }) => [
   name === "Xindi Xu" ? { image: logo, width: 180 } : { text: name },
   { text: `${location} | ${phone}` },
