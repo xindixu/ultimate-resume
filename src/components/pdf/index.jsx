@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import pdfMake from "pdfmake";
 import font from "pdfmake/build/vfs_fonts";
@@ -14,9 +14,10 @@ const fonts = {
 };
 
 const PDF = ({ resumeJSON }) => {
+  const [pdf, setPdf] = useState(null);
   const createPdf = () => {
     const { header, experience, skills, projects } = resumeJSON;
-    const { detail } = experience;
+    const { details } = experience;
     const docDefinition = {
       content: [
         {
@@ -29,7 +30,7 @@ const PDF = ({ resumeJSON }) => {
             {
               width: "auto",
               text: {
-                ul: detail
+                ul: details
               }
             }
           ]
@@ -40,13 +41,17 @@ const PDF = ({ resumeJSON }) => {
       }
     };
 
-    pdfMake.createPdf(docDefinition, null, fonts, vfs).download();
+    const newPdf = pdfMake.createPdf(docDefinition, null, fonts, vfs).getBlob();
+    setPdf(newPdf);
   };
 
   return (
-    <button type="button" onClick={createPdf}>
-      Download PDF
-    </button>
+    <>
+      <button type="button" onClick={createPdf}>
+        Download PDF
+      </button>
+      <embed src={pdf} />
+    </>
   );
 };
 

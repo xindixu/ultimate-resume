@@ -1,35 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Wrapper, Header, Left, Right } from "./styles";
+import { Wrapper, Left, Right } from "./styles";
 import { LetterSize } from "../styled";
 import { randomId } from "../../lib/util";
 import Experience from "../../containers/experience";
 import Project from "../../containers/project";
 import Education from "../../containers/education";
 import Skills from "../../containers/skills";
-import logo from "../../assets/logo.svg";
+import Header from "../../containers/header";
 
 const Presenter = ({ resumeJSON, validate }) => {
   const { header, experience, education, projects, skills } = resumeJSON;
-  const { name, location, phone, links } = header;
 
   return (
-    <LetterSize>
+    <LetterSize className="presenter">
       <Wrapper>
         {validate(resumeJSON) ? (
           <>
             <Left>
-              <Header>
-                <img src={logo} alt="Logo" />
-                <h1>{name}</h1>
-                <p>{location}</p>
-                <p>{phone}</p>
-                {links.map(({ link, text }, index) => (
-                  <p key={index}>
-                    <a href={link}>{text}</a>
-                  </p>
-                ))}
-              </Header>
+              <Header header={header} />
               <section>
                 <h2>Education</h2>
                 {education.map(item => (

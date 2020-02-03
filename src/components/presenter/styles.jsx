@@ -21,5 +21,3 @@ export const Left = styled(Container)`
 `;
 
 export const Right = styled(Container)``;
-
-export const Header = styled.header``;

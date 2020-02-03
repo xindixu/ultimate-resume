@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { dump, load } from "js-yaml";
 import { Wrapper } from "./styles";
@@ -12,6 +12,7 @@ const Editor = ({ resumeJSON, setResumeJSON }) => {
   return (
     <LetterSize>
       <Wrapper
+        className="code"
         onChange={event => onChange(event.target.value)}
         value={dump(resumeJSON)}
       />

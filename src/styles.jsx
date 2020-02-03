@@ -3,7 +3,7 @@ import { device } from "./lib/styleSettings";
 
 export const Wrapper = styled.main`
   display: block;
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: flex;
   }
 `;
