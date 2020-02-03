@@ -15,9 +15,9 @@ const Heading = ({ title, tech, date }) => (
   </h3>
 );
 
-const Project = ({ title, tech, location, date, details }) => (
+const Project = ({ title, tech, date, details }) => (
   <div>
-    <Heading title={title} tech={tech} location={location} date={date} />
+    <Heading title={title} tech={tech} date={date} />
     <Detail details={details} />
   </div>
 );
@@ -25,7 +25,6 @@ const Project = ({ title, tech, location, date, details }) => (
 Project.propTypes = {
   title: PropTypes.string.isRequired,
   tech: PropTypes.arrayOf(PropTypes.string).isRequired,
-  location: PropTypes.string.isRequired,
   date: PropTypes.arrayOf(PropTypes.object).isRequired,
   details: PropTypes.arrayOf(PropTypes.string).isRequired
 };

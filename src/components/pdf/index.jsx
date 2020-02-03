@@ -13,11 +13,25 @@ const fonts = {
   }
 };
 
+const headerPdf = ({ name, location, phone, links }) => [
+  { text: name },
+  { text: `${location} | ${phone}` },
+  { text: links.map(({ link }) => link) }
+];
+
+const educationPdf = ({ school, date, details }) => [
+  { text: school },
+  { text: date },
+  { ul: details }
+];
+
 const PDF = ({ resumeJSON }) => {
   const [pdf, setPdf] = useState(null);
+
+  const { header, experience, skills, projects, education } = resumeJSON;
+  console.log(education[0].details);
+
   const createPdf = () => {
-    const { header, experience, skills, projects } = resumeJSON;
-    const { details } = experience;
     const docDefinition = {
       content: [
         {
@@ -25,24 +39,26 @@ const PDF = ({ resumeJSON }) => {
           columns: [
             {
               width: "auto",
-              text: header
+              stack: [
+                ...headerPdf(header),
+                ...education.map(edu => educationPdf(edu))
+              ]
             },
             {
               width: "auto",
-              text: {
-                ul: details
-              }
+              ul: experience[0].details
             }
-          ]
+          ],
+          columnGap: 10
         }
       ],
       defaultStyle: {
         font: "Cormorant"
-      }
+      },
+      styles: {}
     };
 
-    const newPdf = pdfMake.createPdf(docDefinition, null, fonts, vfs).getBlob();
-    setPdf(newPdf);
+    pdfMake.createPdf(docDefinition, null, fonts, vfs).download();
   };
 
   return (
@@ -50,7 +66,6 @@ const PDF = ({ resumeJSON }) => {
       <button type="button" onClick={createPdf}>
         Download PDF
       </button>
-      <embed src={pdf} />
     </>
   );
 };

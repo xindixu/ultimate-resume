@@ -7,7 +7,7 @@ const Header = ({ header }) => {
 
   return (
     <header>
-      <img src={logo} alt="Xindi Xu" />
+      <img src={logo} alt={name} />
       <p>
         {location} | {phone}
       </p>
@@ -21,15 +21,17 @@ const Header = ({ header }) => {
 };
 
 Header.propTypes = {
-  name: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired
+  header: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        link: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired
+      }).isRequired
+    ).isRequired
+  }).isRequired
 };
 
 export default Header;

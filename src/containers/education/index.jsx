@@ -21,7 +21,7 @@ const Education = ({ school, date, details }) => (
 
 Education.propTypes = {
   school: PropTypes.string.isRequired,
-  date: PropTypes.arrayOf(PropTypes.object).isRequired,
+  date: PropTypes.object.isRequired,
   details: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 

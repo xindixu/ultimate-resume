@@ -12,7 +12,6 @@ const Editor = ({ resumeJSON, setResumeJSON }) => {
   return (
     <LetterSize>
       <Wrapper
-        className="code"
         onChange={event => onChange(event.target.value)}
         value={dump(resumeJSON)}
       />
