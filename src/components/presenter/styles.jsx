@@ -8,7 +8,7 @@ export const Wrapper = styled.main`
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
 `;
 
@@ -18,6 +18,7 @@ const Container = styled.div`
 
 export const Left = styled(Container)`
   background: ${pink};
+  width: 30%;
   h1,
   h2 {
     color: white;
@@ -25,6 +26,8 @@ export const Left = styled(Container)`
 `;
 
 export const Right = styled(Container)`
+  width: 70%;
+
   h2 {
     color: ${pink};
   }

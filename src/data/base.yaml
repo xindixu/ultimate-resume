@@ -27,6 +27,7 @@ experience:
       - Redesign homepage highlighting hiring roles, improving accessibility and responsiveness, using styled-components, flexbox, grid, and react-media, etc.
       - Research design to silently renew access token upon expiring by catching unauthorized errors and resend original requests with the original order using Promises and queues
       - Migrate legacy user profile page to React, design flexible components, and save network requests by condensing response data and caching sharable data to Redux, enabling rich user interactions
+      - Implement forms for customizing user profile fields and realtime preview for custom library project, triple the usage of custom fields in only 2 weeks of release
 
   - title: Front-End Engineer Co-Op
     company: Nokia
