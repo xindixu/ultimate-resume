@@ -22,7 +22,7 @@ const padding = getIntInPx(spacerBase);
 
 const headerPdf = ({ name, location, phone, links }) => [
   name === "Xindi Xu"
-    ? { image: logo, width: 180, margin: [0, 20, 0, 20] }
+    ? { image: logo, width: 180, margin: [0, 20] }
     : { text: name },
   { text: `${location} | ${phone}` },
   links.map(({ title, text, link }) => ({
@@ -32,56 +32,86 @@ const headerPdf = ({ name, location, phone, links }) => [
 ];
 
 const educationPdf = ({ school, date, details }) => [
-  { text: school },
   {
-    text: `${formatDate(date)}`
+    columns: [
+      {
+        width: "*",
+        text: school,
+        style: "h3",
+        bold: true
+      },
+      {
+        width: "auto",
+        text: `${formatDate(date)}`,
+        style: "h3",
+        bold: true
+      }
+    ]
   },
-  { ul: details, type: "circle" }
+  { ul: details, type: "circle", style: "list" }
 ];
 const skillPdf = skill => {
   const texts = skill.map(({ category, details }) => [
-    { text: category, bold: true },
+    { text: category, bold: true, style: "h3" },
     { text: details }
   ]);
-  return { ul: texts, type: "circle" };
+  return { ul: texts, type: "circle", style: "list" };
 };
 
 const experiencePdf = ({ title, company, location, date, details }) => [
   {
     columns: [
       {
-        width: "*",
-        text: `${company} - ${title} @ ${location}`,
-        style: "h3"
+        width: "auto",
+        text: `${company} — `,
+        style: "h3",
+        bold: true
       },
       {
         width: "auto",
-        text: `${formatDate(date[0])} - ${
+        text: `${title} @ ${location}`,
+        style: "h3"
+      },
+      {
+        width: "*",
+        text: `${formatDate(date[0])} — ${
           date[1] ? formatDate(date[1]) : "Present"
-        }`
+        }`,
+        alignment: "right",
+        bold: true,
+        style: "h3"
       }
     ]
   },
-  { ul: details, type: "circle" }
+  { ul: details, type: "circle", style: "list" }
 ];
 
 const projectsPdf = ({ title, tech, date, details }) => [
   {
     columns: [
       {
-        width: "*",
-        text: `${title} - ${tech}`,
+        width: "auto",
+        text: `${title} — `,
+        bold: true,
         style: "h3"
       },
       {
         width: "auto",
-        text: `${formatDate(date[0])} - ${
+        text: tech.join(", "),
+        style: "h3"
+      },
+      {
+        width: "*",
+        text: `${formatDate(date[0])} — ${
           date[1] ? formatDate(date[1]) : "Present"
-        }`
+        }`,
+        alignment: "right",
+        bold: true,
+        style: "h3"
       }
     ]
   },
-  { ul: details, type: "circle" }
+  { ul: details, type: "circle", style: "list" }
 ];
 
 const PDF = ({ resumeJSON }) => {
@@ -90,7 +120,7 @@ const PDF = ({ resumeJSON }) => {
   const createPdf = () => {
     const docDefinition = {
       info: {
-        title: `Resume - ${name}`,
+        title: `Resume — ${name}`,
         author: name,
         subject: "Resume"
       },
@@ -98,6 +128,7 @@ const PDF = ({ resumeJSON }) => {
         {
           table: {
             widths: [left, right],
+            heights: 2000,
             body: [
               [
                 {
@@ -136,26 +167,30 @@ const PDF = ({ resumeJSON }) => {
         h2Pink: {
           bold: true,
           fontSize: 14,
-          margin: [0, 12, 0, 0],
+          lineHeight: 1,
+          margin: [0, 10, 0, 0],
           color: pink
         },
         h2White: {
           bold: true,
           fontSize: 14,
+          lineHeight: 1,
           margin: [0, 10, 0, 0],
           color: "white"
         },
         h3: {
-          bold: true,
-          fontSize: 12,
+          fontSize: 10,
           // left, top, right, bottom
           margin: [0, 4, 0, 0]
         },
         left: {
-          margin: [padding, padding, padding, padding]
+          margin: [1.5 * padding, padding, padding, padding]
         },
         right: {
-          margin: [padding, padding, padding, padding]
+          margin: [padding, padding, 1.5 * padding, padding]
+        },
+        list: {
+          margin: [-8, 0, 0, 0]
         }
       },
       pageMargins: [0, 0, 0, 0],
