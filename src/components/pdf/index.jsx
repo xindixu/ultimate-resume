@@ -4,7 +4,7 @@ import pdfMake from "pdfmake";
 import font from "pdfmake/build/vfs_fonts";
 import { formatDate, getIntInPx } from "../../lib/util";
 import { styleSettings } from "../../lib/styleSettings";
-import logo from "../../assets/logo.png";
+import { logo } from "../../assets/logo";
 
 const { pink, left, right, spacerBase } = styleSettings;
 
@@ -21,7 +21,9 @@ const fonts = {
 const padding = getIntInPx(spacerBase);
 
 const headerPdf = ({ name, location, phone, links }) => [
-  name === "Xindi Xu" ? { image: logo, width: 180 } : { text: name },
+  name === "Xindi Xu"
+    ? { image: logo, width: 180, margin: [0, 20, 0, 20] }
+    : { text: name },
   { text: `${location} | ${phone}` },
   links.map(({ title, text, link }) => ({
     text: `${title}: ${text} \n`,
@@ -84,9 +86,14 @@ const projectsPdf = ({ title, tech, date, details }) => [
 
 const PDF = ({ resumeJSON }) => {
   const { header, experience, skills, projects, education } = resumeJSON;
-
+  const { name } = header;
   const createPdf = () => {
     const docDefinition = {
+      info: {
+        title: `Resume - ${name}`,
+        author: name,
+        subject: "Resume"
+      },
       content: [
         {
           table: {
